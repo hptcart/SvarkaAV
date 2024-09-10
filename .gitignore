@@ -83,3 +83,5 @@ UpgradeLog.htm
 *.sln
 .vsconfig
 .vscode
+/Assets/AmplifyShaderEditor
+/Assets/VRCMarker
