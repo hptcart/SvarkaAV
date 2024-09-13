@@ -8,6 +8,7 @@ public class MainActChanger : UdonSharpBehaviour
 {
     [UdonSynced]  public int currentAct;
     private VRCPlayerApi localPlayer;
+    //public Material volumeMaterial;
 
     public GameObject[] bellow;
     public GameObject furanceLight;
@@ -18,10 +19,13 @@ public class MainActChanger : UdonSharpBehaviour
     public Animator furanceAnim;
     public string coalDropName;
     public GameObject lava;
-    public GameObject flameMount;
+    public GameObject flameHorse;
+    public GameObject flameBird;
     public GameObject tower;
     public GameObject coldLava;
     public GameObject flowers;
+    public GameObject roboHands;
+    public GameObject rocks;
     void Start()
     {
         localPlayer = Networking.LocalPlayer;
@@ -30,49 +34,67 @@ public class MainActChanger : UdonSharpBehaviour
         ActChange();
         if (Networking.IsOwner(gameObject))
             RequestSerialization();
+        
     }
     public void ActChange()
     {
         furanceAnim.SetBool(coalDropName, false);
         lava.SetActive(false);
         furanceAnim.SetBool(brockeFuranceName, false);
-        flameMount.SetActive(false);
+        flameHorse.SetActive(false);
+        flameBird.SetActive(false);
         tower.SetActive(false);
         coldLava.SetActive(false);
         flowers.SetActive(false);
+        roboHands.SetActive(false);
+        rocks.SetActive(false);
+        mainFurance.SetActive(false);
         switch (currentAct)
         {
-            case 0:
+            case 0://minus ten
                 for (int i = 0; i < bellow.Length; i++)
                 {
+                    bellow[i].SetActive(true);
                     bellow[i].GetComponent<BoxCollider>().enabled = false;
                 }
+                rocks.SetActive(true);
+                mainFurance.SetActive(true);
                 break;
-            case 1:
+            case 1://zero
                 for (int i = 0; i < bellow.Length; i++)
                 {
+                    bellow[i].SetActive(true);
                     bellow[i].GetComponent<BoxCollider>().enabled = true;
                 }
                 furanceAnim.SetBool(coalDropName, true);
+                rocks.SetActive(true);
+                mainFurance.SetActive(true);
                 break;
-            case 2:
+            case 2://5
                 furanceAnim.SetBool(brockeFuranceName, true);
                 break;
-            case 3:
+            case 3://10 minuts
                 lava.SetActive(true);
                 furanceAnim.SetBool(brockeFuranceName, true);
+                roboHands.SetActive(true);
+                for (int i = 0; i < bellow.Length; i++)
+                {
+                    bellow[i].SetActive(false);
+                }
                 break;
-            case 4:
-                flameMount.SetActive(true);
+            case 4://15 minuts
+                flameHorse.SetActive(true);
+                flameBird.SetActive(true);
                 furanceAnim.SetBool(brockeFuranceName, true);
                 lava.SetActive(true);
+                
                 break;
-            case 5:
+            case 5://20 minuts
                 furanceAnim.SetBool(brockeFuranceName, true);
                 lava.SetActive(true);
                 tower.SetActive(true);
                 break;
-            case 6:
+            case 6://25 minuts
                 furanceAnim.SetBool(brockeFuranceName, true);
                 coldLava.SetActive(true);
                 flowers.SetActive(true);

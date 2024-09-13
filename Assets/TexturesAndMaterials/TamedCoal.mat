@@ -80,12 +80,12 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Tamed: 9.04
+    - _Tamed: 2.158038
     - _UVSec: 0
     - _VoronoiScale: 3.38
     - _VoronoiScale1: 33.1
     - _ZWrite: 1
-    - __dirty: 0
+    - __dirty: 1
     - _noise: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

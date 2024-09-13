@@ -7,28 +7,45 @@ using VRC.Udon;
 
 public class FuranceControl : UdonSharpBehaviour
 {
+    public VRCPlayerApi localPlayer;
+
     public Light furanceLight;
     public Material flame;
     public float flamePower;
-    public float flamePowerAdded;
+    [UdonSynced] public float flamePowerAdded;
     public float flameFull;
     public string flamePowerName;
     public Slider flameSlider;
     public float fadingSpeed;
+    public Material coal;
+    public string coalTamedName;
+    public float maxFurancePower;
 
     private void Start()
     {
+        if (Networking.IsOwner(gameObject))
+            RequestSerialization();
+
         FlamePowerChange();
     }
     public void Update()
     {
+        if (!Networking.IsOwner(gameObject)) return;
         if (0 < flamePowerAdded)
         {
+            if (maxFurancePower < flamePowerAdded) flamePowerAdded = maxFurancePower;
             flamePowerAdded -= fadingSpeed;
             FlamePowerChange();
+            RequestSerialization();
         }
     }
-    public void FlamePowerChange()
+
+    public override void OnDeserialization()
+    {
+        FlamePowerChange();
+
+    }
+        public void FlamePowerChange()
     {
         flamePower = flameSlider.value;
         flameFull = flamePower + flamePowerAdded;
@@ -38,8 +55,18 @@ public class FuranceControl : UdonSharpBehaviour
         //Color groundColor = Color.HSVToRGB(0.18f, 1, flameFull / 100);
         Color groundColor = new Color(0.74f, 0.21f, 0)*flameFull / 10;
         RenderSettings.ambientGroundColor = groundColor;
-        Debug.Log(groundColor+" ground color");
-        Debug.Log(flameFull/100 + " flameFull");
+        //Debug.Log(groundColor+" ground color");
+        //Debug.Log(flameFull/100 + " flameFull");
+
+        coal.SetFloat(coalTamedName, flameFull / 10);
+    }
+    public void ResetPower()    
+    {
+        Debug.Log("flame power Added");
+        flamePowerAdded = 0;
+        //flameFull = 0;
+        RequestSerialization();
+        FlamePowerChange();
     }
 
 }
