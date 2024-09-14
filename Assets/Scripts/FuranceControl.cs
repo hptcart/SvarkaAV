@@ -36,7 +36,7 @@ public class FuranceControl : UdonSharpBehaviour
             if (maxFurancePower < flamePowerAdded) flamePowerAdded = maxFurancePower;
             flamePowerAdded -= fadingSpeed;
             FlamePowerChange();
-            RequestSerialization();
+            
         }
     }
 
@@ -62,6 +62,11 @@ public class FuranceControl : UdonSharpBehaviour
     }
     public void ResetPower()    
     {
+        if (!Networking.IsOwner(gameObject))
+        {
+            Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        }
+
         Debug.Log("flame power Added");
         flamePowerAdded = 0;
         //flameFull = 0;
