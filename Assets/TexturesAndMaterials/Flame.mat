@@ -1257,7 +1257,7 @@ Material:
     - _DistortionUvToDistort: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 1
-    - _EmiPower: 21.58038
+    - _EmiPower: 0
     - _Emission: 0
     - _EmissionAL0Enabled: 0
     - _EmissionAL0MultipliersBand: 0
