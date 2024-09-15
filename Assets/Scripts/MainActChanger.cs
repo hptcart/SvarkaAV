@@ -20,7 +20,7 @@ public class MainActChanger : UdonSharpBehaviour
     public Animator furanceAnim;
     public string coalDropName;
     public GameObject lava;
-    public GameObject flameHorse;
+    public GameObject flameMounts;
     public GameObject flameBird;
     public GameObject tower;
     public GameObject coldLava;
@@ -54,12 +54,13 @@ public class MainActChanger : UdonSharpBehaviour
                 rocks.SetActive(true);
                 mainFurance.SetActive(true);
 
-                brokenFurance.SetActive(false);
+                
                 furanceAnim.SetBool(coalDropName, false);
                 lava.SetActive(false);
                 furanceAnim.SetBool(brockeFuranceName, false);
-                flameHorse.SetActive(false);
-                flameBird.SetActive(false);
+                brokenFurance.SetActive(false);
+                flameMounts.SetActive(false);
+                //flameBird.SetActive(false);
                 tower.SetActive(false);
                 coldLava.SetActive(false);
                 flowers.SetActive(false);
@@ -80,8 +81,8 @@ public class MainActChanger : UdonSharpBehaviour
                 lava.SetActive(false);
                 brokenFurance.SetActive(false);
                 furanceAnim.SetBool(brockeFuranceName, false);
-                flameHorse.SetActive(false);
-                flameBird.SetActive(false);
+                flameMounts.SetActive(false);
+                //flameBird.SetActive(false);
                 tower.SetActive(false);
                 coldLava.SetActive(false);
                 flowers.SetActive(false);
@@ -102,8 +103,8 @@ public class MainActChanger : UdonSharpBehaviour
                 brokenFurance.SetActive(false);
                 furanceAnim.SetBool(coalDropName, false);
                 lava.SetActive(false);                
-                flameHorse.SetActive(false);
-                flameBird.SetActive(false);
+                flameMounts.SetActive(false);
+                //flameBird.SetActive(false);
                 tower.SetActive(false);
                 coldLava.SetActive(false);
                 flowers.SetActive(false);
@@ -125,8 +126,8 @@ public class MainActChanger : UdonSharpBehaviour
                 mainFurance.SetActive(false);
                 rocks.SetActive(false);
                 furanceAnim.SetBool(coalDropName, false);
-                flameHorse.SetActive(false);
-                flameBird.SetActive(false);
+                flameMounts.SetActive(false);
+                //flameBird.SetActive(false);
                 tower.SetActive(false);
                 coldLava.SetActive(false);
                 flowers.SetActive(false);
@@ -137,8 +138,8 @@ public class MainActChanger : UdonSharpBehaviour
                 lava.SetActive(true);
                 brokenFurance.SetActive(true);
                 furanceAnim.SetBool(brockeFuranceName, true);
-                flameHorse.SetActive(true);
-                flameBird.SetActive(true);
+                flameMounts.SetActive(true);
+                //flameBird.SetActive(true);
                 pipes.SetActive(true);
 
                 for (int i = 0; i < bellow.Length; i++)
@@ -174,8 +175,8 @@ public class MainActChanger : UdonSharpBehaviour
                 coldLava.SetActive(false);
                 flowers.SetActive(false);
                 roboHands.SetActive(false);
-                flameHorse.SetActive(false);
-                flameBird.SetActive(false);
+                flameMounts.SetActive(false);
+                //flameBird.SetActive(false);
 
                 break;
             case 6://25 minuts
@@ -196,8 +197,8 @@ public class MainActChanger : UdonSharpBehaviour
                 coldLava.SetActive(false);
                 flowers.SetActive(false);
                 roboHands.SetActive(false);
-                flameHorse.SetActive(false);
-                flameBird.SetActive(false);
+                flameMounts.SetActive(false);
+                //flameBird.SetActive(false);
                 tower.SetActive(false);
                 break;
         }

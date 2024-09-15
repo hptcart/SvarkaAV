@@ -20,15 +20,17 @@ public class Pickaxe : UdonSharpBehaviour
         {
             for(int i = 0; i < rocks.Length; i++)
             {
-                if(collision.gameObject != rocks[i])
+                if(collision.gameObject.GetComponent<RocksBrocke>()!=null)
                 {
                     parSys.Play();
+                    //Debug.Log("pickaxe did hit");
+                    collision.gameObject.GetComponent<RocksBrocke>().hit();
                 }
             }
             
         }
         //Debug.Log(collision.relativeVelocity.magnitude+ " hit velocity;");
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
 
     }
     

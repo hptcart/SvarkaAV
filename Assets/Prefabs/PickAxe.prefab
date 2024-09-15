@@ -188,6 +188,12 @@ MonoBehaviour:
   rocks:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   hitSpeed: 0.0000025
 --- !u!114 &4362303863368505133
 MonoBehaviour:
