@@ -12,7 +12,7 @@ public class Bellow : UdonSharpBehaviour
     float addedPower;
 
     public float CDTime;
-    public float colddown;
+    float colddown;
     public Animator bellowAnim;
     public string bellowPushUpAnim;
 
