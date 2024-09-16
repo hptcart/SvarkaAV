@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5071858791502909650}
   - component: {fileID: 1578298922652480846}
   - component: {fileID: 6504042230490569704}
+  - component: {fileID: 4350624807576271727}
   m_Layer: 13
   m_Name: ores3
   m_TagString: Untagged
@@ -167,3 +168,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3879345065585061018, guid: 09f2e06c500efbf428307e7c0d3b12f4, type: 3}
+--- !u!114 &4350624807576271727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668289592489539101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
