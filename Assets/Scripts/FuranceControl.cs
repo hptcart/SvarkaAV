@@ -17,7 +17,9 @@ public class FuranceControl : UdonSharpBehaviour
     public string flamePowerName;
     public Slider flameSlider;
     public float fadingSpeed;
-    public Material coal;
+    public Material coalA;
+    public Material coalB;
+    public float subEmi = 1;
     public string coalTamedName;
     public float maxFurancePower;
 
@@ -58,7 +60,8 @@ public class FuranceControl : UdonSharpBehaviour
         //Debug.Log(groundColor+" ground color");
         //Debug.Log(flameFull/100 + " flameFull");
 
-        coal.SetFloat(coalTamedName, flameFull / 10);
+        coalA.SetFloat(coalTamedName, flameFull / subEmi);  
+        coalB.SetFloat(coalTamedName, flameFull / subEmi);
     }
     public void ResetPower()    
     {
