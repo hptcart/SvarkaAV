@@ -69,7 +69,7 @@ Material:
     - _Parallax: 0.004
     - _ParallaxMode: 3
     - _Steps: 32
-    - _Temperature: 0
+    - _Temperature: 0.853
     - _TimeScale: 0.5
     - _dUVMode: 0
     m_Colors:
@@ -78,7 +78,7 @@ Material:
     - _Debug2: {r: 1.36, g: 0.7, b: 0, a: 0}
     - _DebugD: {r: 0.5, g: 0, b: 0, a: 0}
     - _DebugN: {r: 0.68, g: 1, b: 1, a: 1}
-    - _EmissionTint: {r: 4, g: 4, b: 4, a: 1}
+    - _EmissionTint: {r: 3.9999993, g: 1.3651019, b: 0, a: 1}
     - _LightEnvColor0: {r: 0, g: 0.787, b: 0, a: 1}
     - _LightEnvColor1: {r: 0.496, g: 0, b: 1, a: 1}
     - _LightEnvColor2: {r: 0, g: 0.58763933, b: 1, a: 1}

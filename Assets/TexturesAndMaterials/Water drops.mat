@@ -12,8 +12,8 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHABLEND_ON
-  - _COLORADDSUBDIFF_ON
+  - _ALPHAPREMULTIPLY_ON
+  - _COLOROVERLAY_ON
   - _REQUIRE_UV2
   m_InvalidKeywords: []
   m_LightmapFlags: 0
@@ -72,7 +72,7 @@ Material:
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
-    - _ColorMode: 1
+    - _ColorMode: 3
     - _Cull: 0
     - _Cutoff: 0.5
     - _DestinationBlend: 10
@@ -90,7 +90,7 @@ Material:
     - _LightingEnabled: 0
     - _Lit: 1
     - _Metallic: 0
-    - _Mode: 2
+    - _Mode: 3
     - _OcclusionStrength: 1
     - _OffsetFactor: 0
     - _OffsetUnits: 0
@@ -101,13 +101,13 @@ Material:
     - _SoftParticlesNearFadeDistance: 0
     - _SourceBlend: 1
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _UVSec: 0
     - _ZTest: 4
     - _ZWrite: 0
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.13774845, g: 3.9736547, b: 4.867144, a: 1}
+    - _Color: {r: 0.06887421, g: 1.9868279, b: 2.4335728, a: 1}
     - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
