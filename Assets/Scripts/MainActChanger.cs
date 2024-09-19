@@ -231,8 +231,7 @@ public class MainActChanger : UdonSharpBehaviour
                 metallUnicorn.SetActive(false);
                 break;
 
-            case 7://30 minuts
-                
+            case 7://30 minuts                
                 
                 furanceAnim.SetBool(brockeFuranceName, true);
                 furanceAnim.SetInteger(lavaName, 2);
@@ -251,7 +250,6 @@ public class MainActChanger : UdonSharpBehaviour
                 furanceAnim.SetBool(coalDropName, false);
                 pipes.SetActive(false);
                 scrap.SetActive(false);
-                flowers.SetActive(false);
                 roboHands.SetActive(false);
                 flameMounts.SetActive(false);
                 tower.SetActive(false);
