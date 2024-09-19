@@ -19,11 +19,11 @@ public class Keypad : UdonSharpBehaviour
 
     public string[] allowList = new string[0];
     public string[] denyList = new string[0];
-
+    
     public AudioSource soundDenied = null;
     public AudioSource soundGranted = null;
     public AudioSource soundButton = null;
-
+    
     // ReSharper disable once InconsistentNaming
     public string translationPasscode = "PASSCODE";
     // ReSharper disable once InconsistentNaming
@@ -53,9 +53,6 @@ public class Keypad : UdonSharpBehaviour
     private string _buffer;
     private string[] _solutions;
     private GameObject[] _doors;
-
-    //To KuryohinKC
-    public StuffOnlyScript stuffAccess;
 
     #region Util Functions
     private void Log(string value)
@@ -199,9 +196,8 @@ public class Keypad : UdonSharpBehaviour
     {
         Log("Passcode CLEAR!");
         internalKeypadDisplay.text = translationPasscode;
-
-        foreach (var door in _doors)
-        {
+        
+        foreach (var door in _doors) {
             if (door != gameObject)
             {
                 door.SetActive(hideDoorOnGranted);
@@ -256,9 +252,7 @@ public class Keypad : UdonSharpBehaviour
         {
             Log(isOnAllow ? "GRANTED through allow list!" : "Passcode GRANTED!");
             internalKeypadDisplay.text = translationGranted;
-
-            stuffAccess.Access();
-            Debug.Log("Access to stuff");
+            
             foreach (var door in _doors)
             {
                 if (door == gameObject) continue;
@@ -266,20 +260,16 @@ public class Keypad : UdonSharpBehaviour
                 {
                     if (door == correctDoor)
                     {
-                        door.SetActive(!hideDoorOnGranted);
-
+                        door.SetActive(!hideDoorOnGranted);                            
                     }
                     else
                     {
                         door.SetActive(hideDoorOnGranted);
-
                     }
-                    
                 }
                 else
                 {
-                    door.SetActive(!hideDoorOnGranted);
-                    
+                    door.SetActive(!hideDoorOnGranted);                        
                 }
             }
 
@@ -287,7 +277,7 @@ public class Keypad : UdonSharpBehaviour
             {
                 soundGranted.Play();
             }
-
+            
             if (programGranted != null)
             {
                 programGranted.SetProgramVariable("keypadCode", _buffer);
@@ -312,7 +302,7 @@ public class Keypad : UdonSharpBehaviour
             {
                 soundDenied.Play();
             }
-
+            
             if (programDenied != null)
             {
                 programDenied.SetProgramVariable("keypadCode", _buffer);
