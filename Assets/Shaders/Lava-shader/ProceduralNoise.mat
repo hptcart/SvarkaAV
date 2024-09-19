@@ -30,16 +30,16 @@ Material:
     m_Ints: []
     m_Floats:
     - Gradient_Mode: 1
-    - _Distorsion: 0.3
-    - _DistorsionOctaves: 4
-    - _DistorsionScale: 3
-    - _GradientRotation: 0
-    - _GradientWidth: 0.47
-    - _Lift: 0.95
-    - _Multiplier: -0.95
-    - _Noise: -2.93
-    - _NoiseOctaves: 4
-    - _NoiseScale: 3.51
+    - _Distorsion: 1.04
+    - _DistorsionOctaves: 2
+    - _DistorsionScale: 14.13
+    - _GradientRotation: -0
+    - _GradientWidth: 0.8
+    - _Lift: 1.25
+    - _Multiplier: -0.91
+    - _Noise: -1
+    - _NoiseOctaves: 1
+    - _NoiseScale: 38.98
     m_Colors:
     - _GradientOffset: {r: -0.5, g: -0.5, b: 0, a: 0}
   m_BuildTextureStacks: []

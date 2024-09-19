@@ -12,25 +12,29 @@ public class MainActChanger : UdonSharpBehaviour
     //public Material volumeMaterial;
 
     public GameObject[] bellow;
+    public GameObject bellowAll;
     public GameObject furanceLight;
     public GameObject mainFurance;
     public ReflectionProbe reflProb;
 
-    public GameObject brokenFurance;
+    
     public string brockeFuranceName;
     public Animator furanceAnim;
     public string coalDropName;
+    public string lavaName;
     public GameObject lava;
     public GameObject flameMounts;
     public GameObject flameBird;
     public GameObject tower;
-    public GameObject coldLava;
-    public GameObject flowers;
+    public GameObject scrap;
+    
     public GameObject roboHands;
     public GameObject rocks;
+    public RocksBrocke[] rocksAll;
     public GameObject pipes;
     public GameObject watercans;
     public GameObject metallUnicorn;
+    public GameObject flowers;
 
     public TextMeshProUGUI currentActDebug;
     public TextMeshProUGUI lastSerialization;
@@ -54,18 +58,20 @@ public class MainActChanger : UdonSharpBehaviour
                     bellow[i].SetActive(true);
                     bellow[i].GetComponent<BoxCollider>().enabled = false;
                 }
+                bellowAll.SetActive(true);
                 rocks.SetActive(true);
                 mainFurance.SetActive(true);
 
                 
                 furanceAnim.SetBool(coalDropName, false);
-                lava.SetActive(false);
+                
                 furanceAnim.SetBool(brockeFuranceName, false);
-                brokenFurance.SetActive(false);
+                furanceAnim.SetInteger(lavaName, 0);
+                
                 flameMounts.SetActive(false);
                 //flameBird.SetActive(false);
                 tower.SetActive(false);
-                coldLava.SetActive(false);
+                scrap.SetActive(false);
                 flowers.SetActive(false);
                 roboHands.SetActive(false);
                 pipes.SetActive(false);
@@ -79,17 +85,19 @@ public class MainActChanger : UdonSharpBehaviour
                     bellow[i].SetActive(true);
                     bellow[i].GetComponent<BoxCollider>().enabled = true;
                 }
+                bellowAll.SetActive(true);
                 furanceAnim.SetBool(coalDropName, true);
                 rocks.SetActive(true);
                 mainFurance.SetActive(true);
                 
-                lava.SetActive(false);
-                brokenFurance.SetActive(false);
+                
+                furanceAnim.SetInteger(lavaName, 0);
+                scrap.SetActive(false);
                 furanceAnim.SetBool(brockeFuranceName, false);
                 flameMounts.SetActive(false);
                 //flameBird.SetActive(false);
                 tower.SetActive(false);
-                coldLava.SetActive(false);
+                
                 flowers.SetActive(false);
                 roboHands.SetActive(false);
                 pipes.SetActive(false);
@@ -102,18 +110,18 @@ public class MainActChanger : UdonSharpBehaviour
                 {
                     bellow[i].SetActive(true);
                     bellow[i].GetComponent<BoxCollider>().enabled = true;
-                }   
+                }
+                bellowAll.SetActive(true);
                 furanceAnim.SetBool(brockeFuranceName, true);
-                
-                mainFurance.SetActive(false);
-                rocks.SetActive(false);
-                brokenFurance.SetActive(false);
+                furanceAnim.SetInteger(lavaName, 1);
                 furanceAnim.SetBool(coalDropName, false);
-                lava.SetActive(false);                
-                flameMounts.SetActive(false);
-                //flameBird.SetActive(false);
+                scrap.SetActive(true);
+
+                //mainFurance.SetActive(false);
+                rocks.SetActive(false);       
+                furanceAnim.SetBool(coalDropName, false);
+                flameMounts.SetActive(false);                
                 tower.SetActive(false);
-                coldLava.SetActive(false);
                 flowers.SetActive(false);
                 roboHands.SetActive(false);
                 pipes.SetActive(false);
@@ -122,23 +130,24 @@ public class MainActChanger : UdonSharpBehaviour
 
                 break;
             case 3://10 minuts                
-                lava.SetActive(true);
+                
                 roboHands.SetActive(true);
-                brokenFurance.SetActive(true);
-                furanceAnim.SetBool(brockeFuranceName, true); 
-
+                
+                furanceAnim.SetBool(brockeFuranceName, true);
+                furanceAnim.SetInteger(lavaName, 1);
                 for (int i = 0; i < bellow.Length; i++)
                 {
                     bellow[i].SetActive(false);
                     bellow[i].GetComponent<BoxCollider>().enabled = false;
                 }
-                mainFurance.SetActive(false);
+                scrap.SetActive(true);
+                bellowAll.SetActive(false);
+
                 rocks.SetActive(false);
                 furanceAnim.SetBool(coalDropName, false);
-                flameMounts.SetActive(false);
-                //flameBird.SetActive(false);
+                flameMounts.SetActive(false);                
                 tower.SetActive(false);
-                coldLava.SetActive(false);
+                
                 flowers.SetActive(false);
                 pipes.SetActive(false);
                 watercans.SetActive(false);
@@ -146,9 +155,10 @@ public class MainActChanger : UdonSharpBehaviour
 
                 break;
             case 4://15 minuts
-                lava.SetActive(true);
-                brokenFurance.SetActive(true);
+                
+                
                 furanceAnim.SetBool(brockeFuranceName, true);
+                furanceAnim.SetInteger(lavaName, 1);
                 flameMounts.SetActive(true);
                 //flameBird.SetActive(true);
                 pipes.SetActive(true);
@@ -158,11 +168,14 @@ public class MainActChanger : UdonSharpBehaviour
                     bellow[i].SetActive(false);
                     bellow[i].GetComponent<BoxCollider>().enabled = false;
                 }
-                mainFurance.SetActive(false);
+                bellowAll.SetActive(false);
+                //mainFurance.SetActive(false);
+
+                furanceAnim.SetInteger(lavaName, 1);
                 rocks.SetActive(false);
                 furanceAnim.SetBool(coalDropName, false);                
                 tower.SetActive(false);
-                coldLava.SetActive(false);
+                scrap.SetActive(false);
                 flowers.SetActive(false);
                 roboHands.SetActive(false);
                 watercans.SetActive(false);
@@ -171,9 +184,10 @@ public class MainActChanger : UdonSharpBehaviour
 
                 break;
             case 5://20 minuts  
-                lava.SetActive(true);
-                brokenFurance.SetActive(true);
-                furanceAnim.SetBool(brockeFuranceName, true);                
+                
+                
+                furanceAnim.SetBool(brockeFuranceName, true);
+                furanceAnim.SetInteger(lavaName, 2);
                 pipes.SetActive(true);
                 tower.SetActive(true);
 
@@ -182,10 +196,10 @@ public class MainActChanger : UdonSharpBehaviour
                     bellow[i].SetActive(false);
                     bellow[i].GetComponent<BoxCollider>().enabled = false;
                 }
-                mainFurance.SetActive(false);
+                bellowAll.SetActive(false);
                 rocks.SetActive(false);
-                furanceAnim.SetBool(coalDropName, false);                
-                coldLava.SetActive(false);
+                furanceAnim.SetBool(coalDropName, false);
+                scrap.SetActive(false);
                 flowers.SetActive(false);
                 roboHands.SetActive(false);
                 flameMounts.SetActive(false);
@@ -194,24 +208,22 @@ public class MainActChanger : UdonSharpBehaviour
 
 
                 break;
-            case 6://25 minuts
+            case 6://25 minuts             
                 
-                coldLava.SetActive(true);
-                brokenFurance.SetActive(true);
                 furanceAnim.SetBool(brockeFuranceName, true);
                 pipes.SetActive(true);
-                
+                furanceAnim.SetInteger(lavaName, 2);
+
 
                 for (int i = 0; i < bellow.Length; i++)
                 {
                     bellow[i].SetActive(false);
                     bellow[i].GetComponent<BoxCollider>().enabled = false;
                 }
-                mainFurance.SetActive(false);
+                bellowAll.SetActive(false); ;
                 rocks.SetActive(false);
                 furanceAnim.SetBool(coalDropName, false);
-                lava.SetActive(false);
-                flowers.SetActive(false);
+                scrap.SetActive(false);
                 roboHands.SetActive(false);
                 flameMounts.SetActive(false);                
                 tower.SetActive(false);
@@ -220,22 +232,25 @@ public class MainActChanger : UdonSharpBehaviour
                 break;
 
             case 7://30 minuts
-                coldLava.SetActive(true); 
-                brokenFurance.SetActive(true);
+                
+                
                 furanceAnim.SetBool(brockeFuranceName, true);
-                pipes.SetActive(true);
+                furanceAnim.SetInteger(lavaName, 2);
+
                 watercans.SetActive(true);
                 metallUnicorn.SetActive(true);
+                flowers.SetActive(true);
 
                 for (int i = 0; i < bellow.Length; i++)
                 {
                     bellow[i].SetActive(false);
                     bellow[i].GetComponent<BoxCollider>().enabled = false;
                 }
-                mainFurance.SetActive(false);
+                bellowAll.SetActive(false);
                 rocks.SetActive(false);
                 furanceAnim.SetBool(coalDropName, false);
-                lava.SetActive(false);
+                pipes.SetActive(false);
+                scrap.SetActive(false);
                 flowers.SetActive(false);
                 roboHands.SetActive(false);
                 flameMounts.SetActive(false);
@@ -244,10 +259,6 @@ public class MainActChanger : UdonSharpBehaviour
                 break;
         }
         reflProb.RenderProbe();
-
-
-
-
 
         currentActDebug.text = "Current scene: " + currentAct.ToString();
     }
@@ -323,6 +334,33 @@ public class MainActChanger : UdonSharpBehaviour
         currentAct = 7;
         ActChange();
         RequestSerialization();
+    }
+
+
+    public void DisastRocks()
+    {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "DisastRocksSync");        
+    }
+    public void DisastRocksSync()
+    {                
+        for (int i = 0; i < rocksAll.Length;i++)
+        {
+            rocksAll[i].durability = 1;
+            rocksAll[i].hit();
+        }
+    }
+
+    public void RepairRocks()
+    {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "RepairRocksSync");
+    }
+    public void RepairRocksSync()
+    {
+        for (int i = 0; i < rocksAll.Length; i++)
+        {
+            rocksAll[i].durability = 100;
+            rocksAll[i].hit();
+        }
     }
 }
 

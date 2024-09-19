@@ -55,21 +55,21 @@ Material:
     - _DistorsionScale: 0.4
     - _DistortionIterations: 3
     - _EnvLod: 0
-    - _Fill: 0.45
+    - _Fill: 1.08
     - _FillTimeScale: 0
-    - _FillWidth: 0.884
-    - _Glossiness: 0
+    - _FillWidth: 0.497
+    - _Glossiness: 0.285
     - _LiquidMetal: 0
     - _LiquidMetalUVScale: 100
     - _MetalDistorsionAmplitude: -2.19
     - _MetalDistorsionScale: 0.1
-    - _Metallic: 0.115
+    - _Metallic: 0.119
     - _MinimumSteps: 1
     - _NoiseIterations: 2
-    - _Parallax: 0.01
+    - _Parallax: 0.004
     - _ParallaxMode: 3
     - _Steps: 32
-    - _Temperature: 0.39
+    - _Temperature: 0
     - _TimeScale: 0.5
     - _dUVMode: 0
     m_Colors:
@@ -85,7 +85,7 @@ Material:
     - _LightEnvColorB: {r: 0, g: 0.277, b: 1, a: 1}
     - _LightEnvColorG: {r: 0, g: 0.70199996, b: 0, a: 1}
     - _LightEnvColorR: {r: 0.383, g: 0, b: 1, a: 1}
-    - _LiquidMetalColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _LiquidMetalColor: {r: 0.381132, g: 0.381132, b: 0.381132, a: 1}
     - _MyLightColor0: {r: 0, g: 0, b: 0, a: 1}
     - _MyLightColor1: {r: 0, g: 0.9, b: 0, a: 1}
     - _MyLightColor2: {r: 0.6, g: 0.01, b: 1, a: 1}
