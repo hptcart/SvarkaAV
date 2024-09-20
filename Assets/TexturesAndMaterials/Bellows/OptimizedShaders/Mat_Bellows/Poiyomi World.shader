@@ -550,7 +550,6 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi World/c8e31b124b7ea5748903f37
  #define _STOCHASTICMODE_DELIOT_HEITZ 
  #define PROP_BUMPMAP 
  #define PROP_MOCHIEMETALLICMAPS 
- #define PROP_EMISSIONMAP 
  #define PROP_EMISSIONMASK 
  #define PROP_EMISSIONMAP1 
  #define PROP_EMISSIONMASK1 
@@ -3872,7 +3871,6 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi World/c8e31b124b7ea5748903f37
  #define _STOCHASTICMODE_DELIOT_HEITZ 
  #define PROP_BUMPMAP 
  #define PROP_MOCHIEMETALLICMAPS 
- #define PROP_EMISSIONMAP 
  #define PROP_EMISSIONMASK 
  #define PROP_EMISSIONMAP1 
  #define PROP_EMISSIONMASK1 
@@ -6857,7 +6855,6 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi World/c8e31b124b7ea5748903f37
  #define _STOCHASTICMODE_DELIOT_HEITZ 
  #define PROP_BUMPMAP 
  #define PROP_MOCHIEMETALLICMAPS 
- #define PROP_EMISSIONMAP 
  #define PROP_EMISSIONMASK 
  #define PROP_EMISSIONMAP1 
  #define PROP_EMISSIONMASK1 
@@ -8730,7 +8727,6 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi World/c8e31b124b7ea5748903f37
  #define _STOCHASTICMODE_DELIOT_HEITZ 
  #define PROP_BUMPMAP 
  #define PROP_MOCHIEMETALLICMAPS 
- #define PROP_EMISSIONMAP 
  #define PROP_EMISSIONMASK 
  #define PROP_EMISSIONMAP1 
  #define PROP_EMISSIONMASK1 

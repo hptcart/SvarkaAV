@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MetalUnicorn
-  m_Shader: {fileID: 4800000, guid: e85aa320a168f5742acd53104dfaeca9, type: 3}
+  m_Shader: {fileID: 4800000, guid: 7e7da83b7ba93904eaa75c079d1d530b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -99,7 +99,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Bias: 0
+    - _Bias: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -107,14 +107,14 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.538
     - _GlossyReflections: 1
-    - _Met: 0.819
+    - _Met: 0
     - _Metallic: 0.845
     - _Mode: 2
     - _OcclusionStrength: 1
     - _Opacity: 1
     - _Parallax: 0.02
-    - _Power: 1.4
-    - _Scale: 1
+    - _Power: 1
+    - _Scale: 1.27
     - _Smooth: 0.915
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

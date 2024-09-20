@@ -57,19 +57,19 @@ Material:
     - _EnvLod: 0
     - _Fill: 0.9
     - _FillTimeScale: 0
-    - _FillWidth: 0.497
-    - _Glossiness: 0.285
+    - _FillWidth: 1
+    - _Glossiness: 0
     - _LiquidMetal: 0
     - _LiquidMetalUVScale: 10
     - _MetalDistorsionAmplitude: -2.19
     - _MetalDistorsionScale: 0.1
-    - _Metallic: 0.119
+    - _Metallic: 0
     - _MinimumSteps: 1
     - _NoiseIterations: 2
-    - _Parallax: 0.004
+    - _Parallax: 0.002
     - _ParallaxMode: 3
     - _Steps: 32
-    - _Temperature: 1
+    - _Temperature: 0
     - _TimeScale: 0.1
     - _dUVMode: 0
     m_Colors:
