@@ -16,24 +16,17 @@ public class MainActChanger : UdonSharpBehaviour
     public GameObject furanceLight;
     public GameObject mainFurance;
     public ReflectionProbe reflProb;
-
     
     public string brockeFuranceName;
     public Animator furanceAnim;
     public string coalDropName;
     public string lavaName;
-    public GameObject lava;
-    public GameObject flameMounts;
-    public GameObject flameBird;
+    public GameObject lava;    
     public GameObject tower;
-    public GameObject scrap;
-    
-    public GameObject roboHands;
+    public GameObject scrap;        
     public GameObject rocks;
-    public RocksBrocke[] rocksAll;
-    public GameObject pipes;
-    public GameObject watercans;
-    public GameObject metallUnicorn;
+    public RocksBrocke[] rocksAll;    
+    public GameObject watercans;    
     public GameObject flowers;
 
     public TextMeshProUGUI currentActDebug;
@@ -68,16 +61,13 @@ public class MainActChanger : UdonSharpBehaviour
                 furanceAnim.SetBool(brockeFuranceName, false);
                 furanceAnim.SetInteger(lavaName, 0);
                 
-                flameMounts.SetActive(false);
+                
                 //flameBird.SetActive(false);
                 tower.SetActive(false);
                 scrap.SetActive(false);
-                flowers.SetActive(false);
-                roboHands.SetActive(false);
-                pipes.SetActive(false);
+                flowers.SetActive(false);                                
                 watercans.SetActive(false);
-                metallUnicorn.SetActive(false);
-
+                
                 break;
             case 1://zero
                 for (int i = 0; i < bellow.Length; i++)
@@ -88,22 +78,15 @@ public class MainActChanger : UdonSharpBehaviour
                 bellowAll.SetActive(true);
                 furanceAnim.SetBool(coalDropName, true);
                 rocks.SetActive(true);
-                mainFurance.SetActive(true);
-                
+                mainFurance.SetActive(true);                
                 
                 furanceAnim.SetInteger(lavaName, 0);
                 scrap.SetActive(false);
-                furanceAnim.SetBool(brockeFuranceName, false);
-                flameMounts.SetActive(false);
-                //flameBird.SetActive(false);
-                tower.SetActive(false);
-                
-                flowers.SetActive(false);
-                roboHands.SetActive(false);
-                pipes.SetActive(false);
+                furanceAnim.SetBool(brockeFuranceName, false);                
+                tower.SetActive(false);                
+                flowers.SetActive(false);                
                 watercans.SetActive(false);
-                metallUnicorn.SetActive(false);
-
+               
                 break;
             case 2://5                
                 for (int i = 0; i < bellow.Length; i++)
@@ -116,23 +99,17 @@ public class MainActChanger : UdonSharpBehaviour
                 furanceAnim.SetInteger(lavaName, 1);
                 furanceAnim.SetBool(coalDropName, false);
                 scrap.SetActive(true);
-
-                //mainFurance.SetActive(false);
+                                
                 rocks.SetActive(false);       
-                furanceAnim.SetBool(coalDropName, false);
-                flameMounts.SetActive(false);                
+                furanceAnim.SetBool(coalDropName, false);                                
                 tower.SetActive(false);
-                flowers.SetActive(false);
-                roboHands.SetActive(false);
-                pipes.SetActive(false);
+                flowers.SetActive(false);                
                 watercans.SetActive(false);
-                metallUnicorn.SetActive(false);
-
+                
                 break;
-            case 3://10 minuts                
-                
-                roboHands.SetActive(true);
-                
+            case 3://10 minuts            вырезано      
+
+
                 furanceAnim.SetBool(brockeFuranceName, true);
                 furanceAnim.SetInteger(lavaName, 1);
                 for (int i = 0; i < bellow.Length; i++)
@@ -144,24 +121,19 @@ public class MainActChanger : UdonSharpBehaviour
                 bellowAll.SetActive(false);
 
                 rocks.SetActive(false);
-                furanceAnim.SetBool(coalDropName, false);
-                flameMounts.SetActive(false);                
+                furanceAnim.SetBool(coalDropName, false);     
                 tower.SetActive(false);
-                
                 flowers.SetActive(false);
-                pipes.SetActive(false);
                 watercans.SetActive(false);
-                metallUnicorn.SetActive(false);
-
+                
                 break;
-            case 4://15 minuts
-                
-                
+            case 4://15 minutsвырезано 
+
+
                 furanceAnim.SetBool(brockeFuranceName, true);
                 furanceAnim.SetInteger(lavaName, 1);
-                flameMounts.SetActive(true);
                 //flameBird.SetActive(true);
-                pipes.SetActive(true);
+                
 
                 for (int i = 0; i < bellow.Length; i++)
                 {
@@ -176,19 +148,15 @@ public class MainActChanger : UdonSharpBehaviour
                 furanceAnim.SetBool(coalDropName, false);                
                 tower.SetActive(false);
                 scrap.SetActive(false);
-                flowers.SetActive(false);
-                roboHands.SetActive(false);
+                flowers.SetActive(false);                
                 watercans.SetActive(false);
-                metallUnicorn.SetActive(false);
-
 
                 break;
             case 5://20 minuts  
                 
                 
                 furanceAnim.SetBool(brockeFuranceName, true);
-                furanceAnim.SetInteger(lavaName, 2);
-                pipes.SetActive(true);
+                furanceAnim.SetInteger(lavaName, 2);                
                 tower.SetActive(true);
 
                 for (int i = 0; i < bellow.Length; i++)
@@ -201,17 +169,13 @@ public class MainActChanger : UdonSharpBehaviour
                 furanceAnim.SetBool(coalDropName, false);
                 scrap.SetActive(false);
                 flowers.SetActive(false);
-                roboHands.SetActive(false);
-                flameMounts.SetActive(false);
                 watercans.SetActive(false);
-                metallUnicorn.SetActive(false);
-
 
                 break;
-            case 6://25 minuts             
+            case 6://25 minuts     вырезано        
                 
                 furanceAnim.SetBool(brockeFuranceName, true);
-                pipes.SetActive(true);
+                
                 furanceAnim.SetInteger(lavaName, 2);
 
 
@@ -223,21 +187,17 @@ public class MainActChanger : UdonSharpBehaviour
                 bellowAll.SetActive(false); ;
                 rocks.SetActive(false);
                 furanceAnim.SetBool(coalDropName, false);
-                scrap.SetActive(false);
-                roboHands.SetActive(false);
-                flameMounts.SetActive(false);                
+                scrap.SetActive(false);             
                 tower.SetActive(false);
                 watercans.SetActive(false);
-                metallUnicorn.SetActive(false);
+                
                 break;
-
             case 7://30 minuts                
                 
                 furanceAnim.SetBool(brockeFuranceName, true);
-                furanceAnim.SetInteger(lavaName, 2);
+                furanceAnim.SetInteger(lavaName, 3);
 
-                watercans.SetActive(true);
-                metallUnicorn.SetActive(true);
+                watercans.SetActive(true);                
                 flowers.SetActive(true);
 
                 for (int i = 0; i < bellow.Length; i++)
@@ -247,11 +207,8 @@ public class MainActChanger : UdonSharpBehaviour
                 }
                 bellowAll.SetActive(false);
                 rocks.SetActive(false);
-                furanceAnim.SetBool(coalDropName, false);
-                pipes.SetActive(false);
+                furanceAnim.SetBool(coalDropName, false);                
                 scrap.SetActive(false);
-                roboHands.SetActive(false);
-                flameMounts.SetActive(false);
                 tower.SetActive(false);
                 
                 break;
@@ -356,7 +313,7 @@ public class MainActChanger : UdonSharpBehaviour
     {
         for (int i = 0; i < rocksAll.Length; i++)
         {
-            rocksAll[i].durability = 100;
+            rocksAll[i].durability = 1000;
             rocksAll[i].hit();
         }
     }

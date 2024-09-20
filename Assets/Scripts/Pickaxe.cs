@@ -15,23 +15,30 @@ public class Pickaxe : UdonSharpBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        
-        if (collision.relativeVelocity.magnitude > hitSpeed)
-        {
-            for(int i = 0; i < rocks.Length; i++)
+        if (gameObject.GetComponent<VRC_Pickup>().IsHeld)
+        { 
+            if (collision.relativeVelocity.magnitude > hitSpeed)
             {
-                if(collision.gameObject.GetComponent<RocksBrocke>()!=null)
+                for(int i = 0; i < rocks.Length; i++)
                 {
-                    parSys.Play();
-                    //Debug.Log("pickaxe did hit");
-                    collision.gameObject.GetComponent<RocksBrocke>().hit();
+                    if(collision.gameObject.GetComponent<RocksBrocke>()!=null)
+                    {
+                        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Sparks");
+                        //Debug.Log("pickaxe did hit");
+                        collision.gameObject.GetComponent<RocksBrocke>().hit();
+                    }
                 }
-            }
             
+            }
         }
         //Debug.Log(collision.relativeVelocity.magnitude+ " hit velocity;");
         //Debug.Log(collision.gameObject.name);
 
+    }
+    
+    public void Sparks()
+    {
+        parSys.Play();
     }
     
 }

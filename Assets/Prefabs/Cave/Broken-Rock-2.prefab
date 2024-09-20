@@ -3557,7 +3557,7 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 4992040240982351091}
   anim: {fileID: 2354727682220095995}
   animName: RockBrokeState
-  durability: 200
+  durability: 1000
   medRockPull:
   - {fileID: 5242831936700879820}
   - {fileID: 5155602345401631935}
@@ -3572,9 +3572,9 @@ MonoBehaviour:
   - {fileID: 2903339908573392234}
   - {fileID: 4419807221833636439}
   - {fileID: 7058499433608063533}
-  medDamage: 180
-  hardDamage: 40
-  fullDamage: 3
+  medDamage: 850
+  hardDamage: 600
+  fullDamage: 20
   CDTime: 0.1
 --- !u!114 &4992040240982351091
 MonoBehaviour:
