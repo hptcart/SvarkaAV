@@ -54,6 +54,8 @@ public class Keypad : UdonSharpBehaviour
     private string[] _solutions;
     private GameObject[] _doors;
 
+    public StuffOnlyScript staffOnly;
+
     #region Util Functions
     private void Log(string value)
     {
@@ -252,7 +254,9 @@ public class Keypad : UdonSharpBehaviour
         {
             Log(isOnAllow ? "GRANTED through allow list!" : "Passcode GRANTED!");
             internalKeypadDisplay.text = translationGranted;
-            
+            staffOnly.Access();
+
+
             foreach (var door in _doors)
             {
                 if (door == gameObject) continue;

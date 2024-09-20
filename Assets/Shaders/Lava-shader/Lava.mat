@@ -34,8 +34,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 2, y: 2}
+        m_Texture: {fileID: 2800000, guid: 83aed8ec071f69741bf4a0f2b8ec37df, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
@@ -55,30 +55,30 @@ Material:
     - _DistorsionScale: 0.4
     - _DistortionIterations: 3
     - _EnvLod: 0
-    - _Fill: 1.08
+    - _Fill: 0.9
     - _FillTimeScale: 0
-    - _FillWidth: 0.497
-    - _Glossiness: 0.285
+    - _FillWidth: 1
+    - _Glossiness: 0
     - _LiquidMetal: 0
-    - _LiquidMetalUVScale: 100
+    - _LiquidMetalUVScale: 10
     - _MetalDistorsionAmplitude: -2.19
     - _MetalDistorsionScale: 0.1
-    - _Metallic: 0.119
+    - _Metallic: 0
     - _MinimumSteps: 1
     - _NoiseIterations: 2
-    - _Parallax: 0.004
+    - _Parallax: 0.002
     - _ParallaxMode: 3
     - _Steps: 32
-    - _Temperature: 0.853
-    - _TimeScale: 0.5
+    - _Temperature: 0
+    - _TimeScale: 0.1
     - _dUVMode: 0
     m_Colors:
-    - _Color: {r: 0.025943398, g: 0.025943398, b: 0.025943398, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Debug: {r: 30, g: 2, b: -0.5, a: 1}
     - _Debug2: {r: 1.36, g: 0.7, b: 0, a: 0}
     - _DebugD: {r: 0.5, g: 0, b: 0, a: 0}
     - _DebugN: {r: 0.68, g: 1, b: 1, a: 1}
-    - _EmissionTint: {r: 3.9999993, g: 1.3651019, b: 0, a: 1}
+    - _EmissionTint: {r: 1.9999996, g: 0.68255097, b: 0, a: 1}
     - _LightEnvColor0: {r: 0, g: 0.787, b: 0, a: 1}
     - _LightEnvColor1: {r: 0.496, g: 0, b: 1, a: 1}
     - _LightEnvColor2: {r: 0, g: 0.58763933, b: 1, a: 1}

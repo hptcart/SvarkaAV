@@ -15,7 +15,7 @@ Material:
   m_InvalidKeywords:
   - _ALPHABLEND_ON
   - _NORMALMAP
-  m_LightmapFlags: 4
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -45,12 +45,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Diff:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 69dc5a9ff5248ef4e9e348a8d6cab571, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Met:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -91,6 +99,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Bias: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -98,12 +107,14 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.538
     - _GlossyReflections: 1
-    - _Met: 0.819
+    - _Met: 0
     - _Metallic: 0.845
     - _Mode: 2
     - _OcclusionStrength: 1
     - _Opacity: 1
     - _Parallax: 0.02
+    - _Power: 1
+    - _Scale: 1.27
     - _Smooth: 0.915
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -112,7 +123,7 @@ Material:
     - _ZWrite: 0
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 1.014704}
+    - _Color: {r: 0, g: 0.54153156, b: 1, a: 1.014704}
     - _Color1: {r: 0.003135857, g: 0.003135857, b: 0.003135857, a: 1.014704}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
