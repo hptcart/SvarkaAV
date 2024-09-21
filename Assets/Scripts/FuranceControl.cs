@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
+using TMPro;
 
 public class FuranceControl : UdonSharpBehaviour
 {
@@ -23,6 +24,9 @@ public class FuranceControl : UdonSharpBehaviour
     public string coalTamedName;
     public float maxFurancePower;
 
+    public TextMeshProUGUI flamePowerAddedTxt;
+    public TextMeshProUGUI flamePowerFullTxt;
+
     private void Start()
     {
         if (Networking.IsOwner(gameObject))
@@ -38,6 +42,8 @@ public class FuranceControl : UdonSharpBehaviour
             if (maxFurancePower < flamePowerAdded) flamePowerAdded = maxFurancePower;
             flamePowerAdded -= fadingSpeed;
             FlamePowerChange();
+
+            flamePowerAddedTxt.text = flamePowerAdded.ToString() + " Added furnace power";
             
         }
     }
@@ -45,12 +51,13 @@ public class FuranceControl : UdonSharpBehaviour
     public override void OnDeserialization()
     {
         FlamePowerChange();
-
+        Debug.Log("furnace Power cange");
     }
         public void FlamePowerChange()
     {
         flamePower = flameSlider.value;
         flameFull = flamePower + flamePowerAdded;
+        flamePowerFullTxt.text = flameFull.ToString() + " Full furnace power";
         flame.SetFloat(flamePowerName, flameFull);
         furanceLight.intensity = flameFull;
         //Color groundColor = Color.HSVToRGB(18, 100, flameFull / 100);
@@ -62,6 +69,8 @@ public class FuranceControl : UdonSharpBehaviour
 
         coalA.SetFloat(coalTamedName, flameFull / subEmi);  
         coalB.SetFloat(coalTamedName, flameFull / subEmi);
+
+
     }
     public void ResetPower()    
     {

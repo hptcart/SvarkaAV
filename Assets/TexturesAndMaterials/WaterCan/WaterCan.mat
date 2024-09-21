@@ -85,8 +85,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Power: 2.52
-    - _Scale: 1.03
+    - _Power: 4.84
+    - _Scale: 4.89
     - _Smooth: 0.695
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -95,6 +95,6 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0, g: 0.95446754, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.49188834, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -16,7 +16,7 @@ Shader "HorseMetal"
 
 	SubShader
 	{
-		Tags{ "RenderType" = "Custom"  "Queue" = "Transparent+0" "IgnoreProjector" = "True" }
+		Tags{ "RenderType" = "Custom"  "Queue" = "Transparent+0" "IgnoreProjector" = "True" "IsEmissive" = "true"  }
 		Cull Back
 		ZWrite On
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -32,9 +32,9 @@ Shader "HorseMetal"
 
 		uniform sampler2D _UNICORNPEGAZUS_NRM;
 		uniform float4 _UNICORNPEGAZUS_NRM_ST;
+		uniform float4 _Color;
 		uniform float _Met;
 		uniform float _Smooth;
-		uniform float4 _Color;
 		uniform sampler2D _Albedo;
 		uniform float4 _Albedo_ST;
 		uniform float _Cutoff = 0.5;
@@ -45,6 +45,7 @@ Shader "HorseMetal"
 			o.Normal = UnpackNormal( tex2D( _UNICORNPEGAZUS_NRM, uv_UNICORNPEGAZUS_NRM ) );
 			float3 temp_output_22_0 = float3(0.56,0.57,0.58);
 			o.Albedo = temp_output_22_0;
+			o.Emission = ( float4( temp_output_22_0 , 0.0 ) * _Color ).rgb;
 			o.Metallic = _Met;
 			o.Smoothness = _Smooth;
 			o.Alpha = _Color.a;
@@ -143,17 +144,18 @@ Version=19200
 Node;AmplifyShaderEditor.SamplerNode;2;-919,233.5;Inherit;True;Property;_Normal;Normal;2;0;Create;True;0;0;0;False;0;False;-1;None;fd9e756da40bdef44bca9d23283b0f82;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.FunctionNode;9;-505,327.5;Inherit;False;Normal From Height;-1;;2;1942fe2c5f1a1f94881a33d532e4afeb;0;2;20;FLOAT;0;False;110;FLOAT;1;False;2;FLOAT3;40;FLOAT3;0
 Node;AmplifyShaderEditor.SamplerNode;5;-556,591.5;Inherit;True;Property;_UNICORNPEGAZUS_Smoothness;UNICORN&PEGAZUS_Smoothness;5;0;Create;True;0;0;0;False;0;False;-1;73ed774d77652164fad11684421fea9a;73ed774d77652164fad11684421fea9a;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.SamplerNode;1;-480,-72.5;Inherit;True;Property;_Albedo;Albedo;0;1;[HDR];Create;True;0;0;0;False;0;False;-1;None;73ed774d77652164fad11684421fea9a;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.RangedFloatNode;4;-47,355.5;Inherit;False;Property;_Smooth;Smooth;4;0;Create;True;0;0;0;True;0;False;0;0.93;0;1;0;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;3;-96,205.5;Inherit;False;Property;_Met;Met;3;0;Create;True;0;0;0;True;0;False;0;0.819;0;1;0;1;FLOAT;0
-Node;AmplifyShaderEditor.ColorNode;12;-33,-206.5;Inherit;False;Property;_Color;Color;6;1;[HDR];Create;True;0;0;0;False;0;False;1,1,1,0;0.8716981,0,0,1.014704;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.SamplerNode;1;-480,-72.5;Inherit;True;Property;_Albedo;Albedo;0;1;[HDR];Create;True;0;0;0;False;0;False;-1;None;b6e194c36818c2e49b39a54a0cff3e7e;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;4;-47,355.5;Inherit;False;Property;_Smooth;Smooth;4;0;Create;True;0;0;0;True;0;False;0;1;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;3;-96,205.5;Inherit;False;Property;_Met;Met;3;0;Create;True;0;0;0;True;0;False;0;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;873,119;Float;False;True;-1;2;ASEMaterialInspector;0;0;Standard;HorseMetal;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;False;Back;1;False;;0;False;;False;0;False;;0;False;;False;0;Custom;0.5;True;True;0;True;Custom;;Transparent;All;12;all;True;True;True;True;0;False;;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;2;15;10;25;False;0.5;True;2;5;False;;10;False;;0;0;False;;0;False;;0;False;;0;False;;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;True;Relative;0;;1;-1;-1;-1;0;False;0;0;False;;-1;0;False;;0;0;0;False;0.1;False;;0;False;;False;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;13;567,72.5;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
-Node;AmplifyShaderEditor.FunctionNode;22;237.5697,-37.11652;Inherit;False;Metal Reflectance;-1;;2;55ea54ba7a9d52c4a8bf7b3e01e6ae77;1,38,0;0;1;FLOAT3;0
-Node;AmplifyShaderEditor.SamplerNode;23;318.4697,384.6836;Inherit;True;Property;_UNICORNPEGAZUS_NRM;UNICORN&PEGAZUS_NRM;8;0;Create;True;0;0;0;False;0;False;-1;9f6c0013c6b4d314b923d1becd30bb23;9f6c0013c6b4d314b923d1becd30bb23;True;0;True;bump;Auto;True;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.FunctionNode;22;237.5697,-37.11652;Inherit;False;Metal Reflectance;-1;;3;55ea54ba7a9d52c4a8bf7b3e01e6ae77;1,38,0;0;1;FLOAT3;0
+Node;AmplifyShaderEditor.SamplerNode;23;318.4697,384.6836;Inherit;True;Property;_UNICORNPEGAZUS_NRM;UNICORN&PEGAZUS_NRM;7;0;Create;True;0;0;0;False;0;False;-1;9f6c0013c6b4d314b923d1becd30bb23;None;True;0;True;bump;Auto;True;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;12;-78.50001,-59.59997;Inherit;False;Property;_Color;Color;6;1;[HDR];Create;True;0;0;0;False;0;False;1,1,1,0;0,1.662551,1.386272,1.012722;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 WireConnection;9;20;2;0
 WireConnection;0;0;22;0
 WireConnection;0;1;23;0
+WireConnection;0;2;13;0
 WireConnection;0;3;3;0
 WireConnection;0;4;4;0
 WireConnection;0;9;12;4
@@ -161,4 +163,4 @@ WireConnection;0;10;1;4
 WireConnection;13;0;22;0
 WireConnection;13;1;12;0
 ASEEND*/
-//CHKSM=2E32F7DFD549F3BBEF70E9327FC4ED1C2AACE3EC
+//CHKSM=5AFFF9280CBB2BF9730F977B14EC543648D2A4AB
